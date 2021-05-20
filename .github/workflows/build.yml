@@ -9,4 +9,6 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: build
-      run: make -j4 V=0
+      run: |
+        sudo sh -c "echo ':APE:M::MZqFpD::/bin/sh:' >/proc/sys/fs/binfmt_misc/register"
+        make -j4 V=0
